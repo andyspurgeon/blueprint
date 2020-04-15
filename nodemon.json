@@ -1,0 +1,9 @@
+{
+  "verbose": false,
+  "ignore": [
+    ".git",
+    "client/**",
+    "logs/**",
+    "public/**"
+  ]
+}
