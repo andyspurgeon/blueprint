@@ -2,6 +2,9 @@ extends ../includes/layout
 
 block content
     body
+        include ../includes/navbar
         .container
             h1.is-size-1 Blueprint Administration
-            p Admin tools for #{req.username}
+            p Hello #{req.user.username}!
+
+        script(type='text/javascript', src='/js/main.js')

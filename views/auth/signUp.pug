@@ -2,6 +2,7 @@ extends ../includes/layout
 
 block content
     body
+        include ../includes/navbar
         section.hero.is-primary.is-fullheight
             .hero-body
                 .container
@@ -30,4 +31,5 @@ block content
                                     label.checkbox(for='')
                                         input(type='checkbox') Remember me
                                 .field
-                                    button.button.is-success.is-fullwidth.strong Sign Up
+                                    button.button.is-success.is-fullwidth.strong
+                                        strong Sign Up
