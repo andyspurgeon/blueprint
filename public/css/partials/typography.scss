@@ -1,0 +1,14 @@
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+
+// Override Typography
+$family-primary:    'Poppins', sans-serif;
+$family-secondary:  'Josefin+Sans', sans-serif;
+$family-code:       'PT Mono', monospace;
+
+// Set Title Typography
+h1, h2, h3, h4, h5, h6, legend {
+  font-family:    $family-secondary;
+}

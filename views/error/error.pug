@@ -1,0 +1,12 @@
+extends ../includes/layout
+
+block content
+    body
+        .container
+            h1.is-size-1 Error!
+            if(error.status)
+                h2.is-size-2 #{error.status}: #{message}
+            else
+                h2.is-size-2 #{message}
+            div(style="overflow:auto;")
+                pre #{error.stack}

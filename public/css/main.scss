@@ -1,0 +1,6 @@
+// Import bulma and necessary bulma-extensions
+@import '../../node_modules/bulma/bulma.sass';
+@import '../../node_modules/bulma-extensions/bulma-pageloader/dist/css/bulma-pageloader.sass';
+
+// Import Project-Specific Partials
+@import 'partials/typography.scss';
