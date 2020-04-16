@@ -8,7 +8,7 @@ block content
                 .container
                     .columns.is-centered
                         .column.is-5-tablet.is-4-desktop.is-3-widescreen
-                            form.box(action='')
+                            form.box(method='post', action='/auth/signUp', id='signUpForm')
                                 .field
                                     label.label(for='username') Email
                                     .control.has-icons-left
@@ -31,5 +31,5 @@ block content
                                     label.checkbox(for='')
                                         input(type='checkbox') Remember me
                                 .field
-                                    button.button.is-success.is-fullwidth.strong
+                                    button.button.is-success.is-fullwidth.strong(type='submit')
                                         strong Sign Up
