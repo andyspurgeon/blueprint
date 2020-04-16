@@ -111,8 +111,8 @@ router.post('/auth/signUp', function (req, res, next) {
  * req
  * res
  */
-router.get('/auth/lostPassword', function (req, res, next) {
-    res.render('auth/lostPassword');
+router.get('/auth/lostPasswordHelp', function (req, res, next) {
+    res.render('auth/lostPasswordHelp');
 });
 
 
@@ -122,7 +122,7 @@ router.get('/auth/lostPassword', function (req, res, next) {
  * req
  * res
  */
-router.post('/auth/lostPassword', function (req, res, next) {
+router.post('/auth/lostPasswordHelp', function (req, res, next) {
     // TODO: Implement lost password process
 });
 
@@ -133,8 +133,8 @@ router.post('/auth/lostPassword', function (req, res, next) {
  * req
  * res
  */
-router.get('/auth/resetPassword', function (req, res, next) {
-    res.render('auth/resetPassword');
+router.get('/auth/passwordChangeHelp', function (req, res, next) {
+    res.render('auth/passwordChangeHelp');
 });
 
 
@@ -144,7 +144,7 @@ router.get('/auth/resetPassword', function (req, res, next) {
  * req
  * res
  */
-router.post('/auth/resetPassword', function (req, res, next) {
+router.post('/auth/passwordChangeHelp', function (req, res, next) {
     // TODO: Implement password reset
 });
 
