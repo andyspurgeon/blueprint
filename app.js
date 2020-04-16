@@ -158,8 +158,8 @@ app.use(function(err, req, res, next) {
 // TODO: Move the app behind nginx?
 const httpsServer = https.createServer(sslOptions, app);
 httpsServer.listen(process.env.HTTPS_PORT);
-//Logger.info(`Welcome to Epicenter! HTTPS server listening on port ${process.env.HTTPS_PORT}.`);
-console.log(`Welcome to Epicenter! HTTPS server listening on port ${process.env.HTTPS_PORT}.`);
+//Logger.info(`Welcome to Blueprint! HTTPS server listening on port ${process.env.HTTPS_PORT}.`);
+console.log(`Welcome to Blueprint! HTTPS server listening on port ${process.env.HTTPS_PORT}.`);
 
 // **************************************************
 // Export the Express App
