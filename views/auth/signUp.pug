@@ -1,0 +1,33 @@
+extends ../includes/layout
+
+block content
+    body
+        section.hero.is-primary.is-fullheight
+            .hero-body
+                .container
+                    .columns.is-centered
+                        .column.is-5-tablet.is-4-desktop.is-3-widescreen
+                            form.box(action='')
+                                .field
+                                    label.label(for='username') Email
+                                    .control.has-icons-left
+                                        input.input(type='email', placeholder='Email address', required='', id='username', name='username')
+                                        span.icon.is-small.is-left
+                                            i.fa.fa-envelope
+                                .field
+                                    label.label(for='password') Password
+                                    .control.has-icons-left
+                                        input.input(type='password', placeholder='*******', required='', id='password', name='password')
+                                        span.icon.is-small.is-left
+                                            i.fa.fa-lock
+                                .field
+                                    label.label(for='confirmPassword') Confirm Password
+                                    .control.has-icons-left
+                                        input.input(type='password', placeholder='*******', required='', id='confirmPassword', name='confirmPassword')
+                                        span.icon.is-small.is-left
+                                            i.fa.fa-lock
+                                //.field
+                                    label.checkbox(for='')
+                                        input(type='checkbox') Remember me
+                                .field
+                                    button.button.is-success.is-fullwidth.strong Sign Up

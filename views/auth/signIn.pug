@@ -2,50 +2,26 @@ extends ../includes/layout
 
 block content
     body
-        .columns
-            .column
-                .form-wrapper
-                    .form-title
-                        h3 Welcome back
-                        h4 We&apos;re super happy to see you again! Let&apos;s log you in.
-                    .form-inner
-                        .field
-                            .control.has-icons-left
-                                input.input.is-rounded.is-secondary-focus(type='text' placeholder='Email address')
-                                .icon.is-nedium.is-left
-                                    i.sl.sl-icon-envelope-open
-                        .field
-                            .control.has-icons-left
-                                input.input.is-rounded.is-secondary-focus(type='password' placeholder='Password')
-                                .icon.is-nedium.is-left
-                                    i.sl.sl-icon-lock
-                        .field.pb-5
-                            .control
-                                label.checkbox-wrap.is-small.muted-text
-                                    input#check1.d-checkbox(type='checkbox')
-                                    span
-                                    |                                 Remember me?
-                        .field
-                            .control.has-icons-left
-                                button.button.is-fullwidth.is-rounded.secondary-btn.raised Login
-                        .has-text-centered
-                            a.muted-text Forgot Password?
-                        .form-divider
-                            .divider-circle
-                                i.material-icons keyboard_arrow_down
-                        .social-login
-                            h4 Or login with social media
-                            .login-buttons
-                                .button-wrap
-                                    a.button-inner
-                                        i.fa.fa-google
-                                .button-wrap
-                                    a.button-inner
-                                        i.fa.fa-facebook
-                                .button-wrap
-                                    a.button-inner
-                                        i.fa.fa-twitter
-            //
-              div class="column is-6">
-              <img src="assets/img/illustrations/drawings/couch.svg" alt="">
-              </div
+        section.hero.is-primary.is-fullheight
+            .hero-body
+                .container
+                    .columns.is-centered
+                        .column.is-5-tablet.is-4-desktop.is-3-widescreen
+                            form.box(action='')
+                                .field
+                                    label.label(for='username') Email
+                                    .control.has-icons-left
+                                        input.input(type='email', placeholder='Email address', required='', id='username', name='username')
+                                        span.icon.is-small.is-left
+                                            i.fa.fa-envelope
+                                .field
+                                    label.label(for='password') Password
+                                    .control.has-icons-left
+                                        input.input(type='password', placeholder='*******', required='', id='password', name='password')
+                                        span.icon.is-small.is-left
+                                            i.fa.fa-lock
+                                //.field
+                                    label.checkbox(for='')
+                                        input(type='checkbox') Remember me
+                                .field
+                                    button.button.is-success.is-fullwidth.strong Sign In
