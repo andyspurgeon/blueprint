@@ -15,6 +15,10 @@ const passport = require('passport');
 const router = require('express').Router();
 const auth = require('../models/user');
 
+const check = require('express-validator').check;
+const validationResult = require('express-validator').validationResult;
+
+
 
 /**
  * @summary     Renders the signIn view.
@@ -57,20 +61,17 @@ router.get('/auth/signUp', function (req, res, next) {
  */
 router.post('/auth/signUp', function (req, res, next) {
     // Validate input
-    req.checkBody('firstName', 'First name is a required field.').notEmpty();
-    req.checkBody('firstName', 'First Name must be between 2 and 30 characters in length.').len(2, 30)
-    req.checkBody('lastName', 'Last name is a required field.').notEmpty();
-    req.checkBody('lastName', 'Last Name must be between 2 and 30 characters in length.').len(2, 30);
-    req.checkBody('authname', 'Email address is a required field.').notEmpty();
-    req.checkBody('authname', 'You did not provide a valid email address.').isEmail();
-    req.checkBody('password', 'Password is a required field.').notEmpty();
-    req.checkBody('password', 'Passwords must be between 8 and 30 characters in length.').len(8, 30);
-    req.checkBody('confirmPassword', 'Confirm Password is a required field.').notEmpty();
-    req.checkBody('confirmPassword', 'Passwords do not match.').equals(req.body.password);
+    check(req.body.username, 'Email address is a required field.').notEmpty();
+    check(req.body.username, 'You did not provide a valid email address.').isEmail();
+    check(req.body.password, 'Password is a required field.').notEmpty();
+    check(req.body.password, 'Passwords must be between 8 and 30 characters in length.').isLength(8, 30);
+    check(req.body.confirmPassword, 'Confirm Password is a required field.').notEmpty();
+    check(req.body.confirmPassword, 'Passwords do not match.').equals(req.body.password);
 
     // Collect validation errors
-    var validationErrors = req.validationErrors();
+    const validationErrors = validationResult(req);
 
+    /*
     if(validationErrors)
     {
         logger.warn(validationErrors, `Validation errors on signup request for new auth: ${req.body.authname}.`);
@@ -78,13 +79,14 @@ router.post('/auth/signUp', function (req, res, next) {
         res.render('auth/signUp', { formData: req.body } );
         return;
     }
+    */
+    if(!validationErrors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
     else
     {
         auth.register(new auth({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            organization: req.body.organization,
-            authname: req.body.authname
+            username: req.body.username
         }), req.body.password, function (error, auth)
         {
             if (error)
@@ -102,6 +104,7 @@ router.post('/auth/signUp', function (req, res, next) {
             })(req, res, next);
         });
     }
+
 });
 
 

@@ -121,16 +121,14 @@ app.use(function (req, res, next) {
 // **************************************************
 const authRouter = require('./routers/authRouter');
 const homeRouter = require('./routers/homeRouter');
-// const mapRouter = require('./routers/mapRouter');
-// const userRouter = require('./routers/userRouter');
+const userRouter = require('./routers/userRouter');
 
 // **************************************************
 // Configure Routes
 // **************************************************
 app.use('/', authRouter);
 app.use('/', homeRouter);
-// app.use('/', mapRouter);
-// app.use('/', userRouter);
+app.use('/', userRouter);
 
 // **************************************************
 // Error Middleware
